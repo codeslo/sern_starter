@@ -1,0 +1,25 @@
+{
+  "name": "ufei",
+  "version": "0.0.1",
+  "description": "Urban Forest Ecosystems Institute",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev:server": "nodemon index.js",
+    "dev:client": "cd client && yarn start",
+    "dev": "concurrently --kill-others \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "author": "Matt West",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.4",
+    "mysql": "^2.18.1",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
