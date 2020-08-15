@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
       "Cache-Control": "no-cache",
     },
   };
+  res.header("Cache-Control", "no-cache");
   res.sendFile(index.html, options);
 });
 
