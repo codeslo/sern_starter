@@ -16,8 +16,13 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
-  res.setHeader("Cache-Control", "no-cache");
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  const options = {
+    root: path.join(__dirname, "client/build"),
+    headers: {
+      "Cache-Control": "no-cache",
+    },
+  };
+  res.sendFile(index.html, options);
 });
 
 app.listen(port, () => console.log(`listening on port ${port}.`));
