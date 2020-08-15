@@ -19,7 +19,10 @@ class App extends Component {
         this.setState({ messageTitle: data.title, messageBody: data.body });
       })
       .catch((err) => {
-        console.log(`Error in fetch: ${err}`);
+        this.setState({
+          messageTitle: "Whoops",
+          messageBody: "Looks like we've got a database problem",
+        });
       });
   };
 
