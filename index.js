@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
+  res.setHeader("Cache-Control", "no-cache");
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
