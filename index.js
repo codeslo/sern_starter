@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   const options = {
     root: path.join(__dirname, "client/build"),
   };
-  res.set("Cache-Control", "no-cache,no-store");
+  res.set("Cache-Control", "no-store");
   res.sendFile(index.html, options);
 });
 
