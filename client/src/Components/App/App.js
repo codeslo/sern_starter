@@ -12,7 +12,7 @@ class App extends Component {
     this.getMessages();
   }
   getMessages = () => {
-    fetch("/getmessages")
+    fetch("/message/getMessage")
       .then((res) => res.json())
       .then((response) => {
         const data = response.data;

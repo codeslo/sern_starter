@@ -6,14 +6,14 @@ const express = require("express");
 const port = process.env.PORT;
 const path = require("path");
 const app = express();
-const router = express.Router();
+// routes
+const messageRoutes = require("./routes/messageRoutes");
 
-// controllers
-const messageController = require("./controllers/Message");
+// end routes
 
 app.use(express.static(path.join(__dirname, "client/build")));
 
-app.get("/getmessages", messageController.getMessages);
+app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));

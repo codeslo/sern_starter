@@ -1,6 +1,6 @@
 const model = require("../models/Message");
 
-exports.getMessages = async (req, res) => {
-  const data = await model.getMessages();
+exports.getMessage = async (req, res) => {
+  const data = await model.getMessage();
   res.json({ data });
 };
