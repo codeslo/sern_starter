@@ -21,7 +21,7 @@ class App extends Component {
       .catch((err) => {
         this.setState({
           messageTitle: "Whoops",
-          messageBody: "It seems we've got a database problem",
+          messageBody: "It looks like we've got a database problem",
         });
       });
   };
