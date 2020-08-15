@@ -18,11 +18,7 @@ app.use("/message", messageRoutes);
 app.get("/", (req, res) => {
   const options = {
     root: path.join(__dirname, "client/build"),
-    headers: {
-      "Cache-Control": "no-cache",
-    },
   };
-  res.header("Cache-Control", "no-cache");
   res.sendFile(index.html, options);
 });
 
