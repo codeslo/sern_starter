@@ -12,7 +12,6 @@ const messageRoutes = require("./routes/messageRoutes");
 // end routes
 
 app.use(express.static(path.join(__dirname, "client/build")));
-
 app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
