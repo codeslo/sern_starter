@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.4",
     "mysql": "^2.18.1",
+    "nocache": "^2.1.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
