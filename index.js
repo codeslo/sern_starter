@@ -6,12 +6,17 @@ const express = require("express");
 const port = process.env.PORT;
 const path = require("path");
 const app = express();
-const nocache = require("nocache");
+const cache = require("cache-control");
 // routes
 const messageRoutes = require("./routes/messageRoutes");
+const { publicDecrypt } = require("crypto");
 
 // end routes
-app.use(nocache());
+const cacheOptions = {
+  "/index.html": "no-store, no-cache, must-revalidate, proxy-revalidate",
+  "/**": "public,max-age:0",
+};
+app.use(cache(cacheOptions));
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/message", messageRoutes);
 
