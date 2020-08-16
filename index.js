@@ -11,7 +11,7 @@ const nocache = require("nocache");
 const messageRoutes = require("./routes/messageRoutes");
 
 // end routes
-app.use("nocache()");
+app.use(nocache());
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/message", messageRoutes);
 
@@ -19,13 +19,6 @@ app.get("/", (req, res) => {
   const options = {
     root: path.join(__dirname, "client/build"),
   };
-  res.setHeader(
-    "Cache-Control",
-    "no-store,no-cache,must-revalidate,proxy-revalidate"
-  );
-  res.setHeader("Pragma", "no-cache");
-  res.setHeader("Expires", 0);
-  res.setHeader("Surrogate-Control", "no-store");
   res.sendFile("index.html", options);
 });
 
