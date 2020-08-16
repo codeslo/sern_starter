@@ -16,9 +16,9 @@ app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
   const options = {
-    root: path.join(__dirname, "client/build/indexhtml"),
+    root: path.join(__dirname, "client/build"),
   };
-  res.sendFile(index.html, options);
+  res.sendFile("indexhtml/index.html", options);
 });
 
 app.listen(port, () => console.log(`listening on port ${port}.`));
