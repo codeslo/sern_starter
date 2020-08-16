@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   const options = {
     root: path.join(__dirname, "client/build"),
   };
-  res.sendFile("indexhtml/index.html", options);
+  res.sendFile("/indexhtml/index.html", options);
 });
 
 app.listen(port, () => console.log(`listening on port ${port}.`));
