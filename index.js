@@ -18,6 +18,13 @@ app.get("/", (req, res) => {
   const options = {
     root: path.join(__dirname, "client/build"),
   };
+  res.setHeader(
+    "Cache-Control",
+    "no-store,no-cache,must-revalidate,proxy-revalidate"
+  );
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", 0);
+  res.setHeader("Surrogate-Control", "no-store");
   res.sendFile("index.html", options);
 });
 
