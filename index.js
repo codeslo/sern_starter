@@ -16,7 +16,7 @@ app.use("/message", messageRoutes);
 
 app.get("/", (req, res) => {
   const options = {
-    root: path.join(__dirname, "client/build"),
+    root: path.join(__dirname, "client/build/indexhtml"),
   };
   res.sendFile(index.html, options);
 });
