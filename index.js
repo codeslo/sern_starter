@@ -13,8 +13,8 @@ const { publicDecrypt } = require("crypto");
 
 // end routes
 const cacheOptions = {
-  "/index.html": "no-store, no-cache, must-revalidate, proxy-revalidate",
-  "/**": "public,max-age:0",
+  "/static": "public,max-age:0",
+  "/**": "no-store, no-cache, must-revalidate, proxy-revalidate",
 };
 app.use(cache(cacheOptions));
 app.use(express.static(path.join(__dirname, "client/build")));
