@@ -43,21 +43,21 @@ if (process.env.NODE_ENV == "local") {
 }
 
 // if we're in AWS, log to cloudwatch
-if (process.env.NODE_ENV == "AWS") {
-  transports.push(
-    new CloudWatchTransport({
-      logGroupName: process.env.CLOUDWATCH_GROUP_NAME, // REQUIRED
-      logStreamName: process.env.CLOUDWATCH_STREAM_NAME, // REQUIRED
-      createLogGroup: true,
-      createLogStream: true,
-      submissionInterval: 2000,
-      submissionRetryCount: 1,
-      batchSize: 20,
-      awsConfig: {
-        accessKeyId: process.env.CLOUDWATCH_ACCESS_KEY_ID,
-        secretAccessKey: process.env.CLOUDWATCH_SECRET_ACCESS_KEY,
-        region: process.env.CLOUDWATCH_REGION,
-      },
-    })
-  );
-}
+// if (process.env.NODE_ENV == "AWS") {
+//   transports.push(
+//     new CloudWatchTransport({
+//       logGroupName: process.env.CLOUDWATCH_GROUP_NAME, // REQUIRED
+//       logStreamName: process.env.CLOUDWATCH_STREAM_NAME, // REQUIRED
+//       createLogGroup: true,
+//       createLogStream: true,
+//       submissionInterval: 2000,
+//       submissionRetryCount: 1,
+//       batchSize: 20,
+//       awsConfig: {
+//         accessKeyId: process.env.CLOUDWATCH_ACCESS_KEY_ID,
+//         secretAccessKey: process.env.CLOUDWATCH_SECRET_ACCESS_KEY,
+//         region: process.env.CLOUDWATCH_REGION,
+//       },
+//     })
+//   );
+// }
