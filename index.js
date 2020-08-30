@@ -7,6 +7,12 @@ const port = process.env.PORT;
 const path = require("path");
 const app = express();
 const cache = require("cache-control");
+// logging
+const logger = require("./services/logger");
+app.use((req, res, next) => {
+  logger.info(`root.index: HTTP Request: ${req.method}, ${req.url}`);
+  next();
+});
 // routes
 const messageRoutes = require("./routes/messageRoutes");
 const { publicDecrypt } = require("crypto");
@@ -27,4 +33,4 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", options);
 });
 
-app.listen(port, () => console.log(`listening on port ${port}.`));
+app.listen(port, () => logger.info(`listening on port ${port}.`));
