@@ -1,3 +1,5 @@
+// NOTE, these are environment variables. see .env file for working locally
+
 const knex = require("knex")({
   client: "mysql",
   connection: {
