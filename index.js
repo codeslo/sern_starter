@@ -10,7 +10,13 @@ const cache = require("cache-control");
 // logging
 const logger = require("./services/logger");
 app.use((req, res, next) => {
-  logger.info(`incoming request: method: ${req.method}, url:${req.url}`);
+  //logger.info(`incoming request: method: ${req.method}, url:${req.url}`);
+  logger.info(
+    JSON.stringify({
+      source: "index.js",
+      message: `incoming request: ${req.method}, ${req.url}`,
+    })
+  );
   next();
 });
 // routes

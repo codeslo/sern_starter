@@ -14,9 +14,8 @@ module.exports = logger = winston.createLogger({
   },
   transports: [
     new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss.SSS" }),
-        winston.format.simple()
+      format: winston.format.json(
+        winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss.SSS" })
       ),
     }),
   ],
