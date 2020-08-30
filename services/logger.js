@@ -21,14 +21,3 @@ module.exports = logger = winston.createLogger({
     }),
   ],
 });
-
-if (process.env.NODE_ENV === "AWS") {
-  logger.add(
-    new CloudWatchTransport({
-      logGroupName: process.env.CLOUDWATCH_GROUP_NAME,
-      logStreamName: process.env.CLOUDWATCH_STREAM_NAME,
-      awsRegion: "us-west-1",
-      jsonMessage: true,
-    })
-  );
-}
